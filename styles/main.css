@@ -302,6 +302,10 @@ a {
   height: 400px;
   background-color: #ffffff;
   overflow: hidden;
+  position: relative;
+  top: 50px;
+  left: 0;
+  opacity: 0;
 }
 
 .services-container #services-list .service-card i {
@@ -339,6 +343,7 @@ a {
   height: 30px;
   width: 300px;
   margin: 0 auto;
+  opacity: 0;
 }
 
 .services-container .services-controls-container .glide-custom-array {
@@ -424,6 +429,10 @@ a {
 
 .whoweare-container .whoweare-intro-container {
   margin-top: 3rem;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .whoweare-container .whoweare-intro-container p {

@@ -248,14 +248,13 @@ $(() => {
   class Window {
     constructor() {
       this.animDuration = 800;
+      this.windowHeight = $(window).height();
       this.heroContainer = $(".hero-container");
       this.servicesContainer = $(".services-container");
+      this.whoweareContainer = $(".whoweare-container");
     }
 
     homeAnimEvent = (scrollVal) => {
-      console.log(scrollVal);
-      console.log($(window).height());
-      console.log(this.servicesContainer.outerHeight());
       if (this.heroContainer.offset().top === 0) {
         this.heroContainer
           .find("h1")
@@ -270,10 +269,64 @@ $(() => {
           .animate({ left: 0, opacity: 1 }, this.animDuration);
       }
 
-      if ($(window).height() > 0) {
-        console.log("scroll is 0");
+      if (this.windowHeight > this.servicesContainer.offset().top) {
+        let cardDelay = 200;
         this.servicesContainer
           .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.servicesContainer.find(".service-card").each((i, card) => {
+          $(card)
+            .delay(cardDelay)
+            .animate({ top: 0, opacity: 1 }, this.animDuration);
+
+          cardDelay += 200;
+        });
+
+        this.servicesContainer
+          .find(".services-controls-container")
+          .animate({ opacity: 1 }, this.animDuration);
+      } else if (scrollVal > this.servicesContainer.offset().top / 2) {
+        let cardDelay = 200;
+        this.servicesContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.servicesContainer.find(".service-card").each((i, card) => {
+          $(card)
+            .delay(cardDelay)
+            .animate({ top: 0, opacity: 1 }, this.animDuration);
+
+          cardDelay += 200;
+        });
+
+        this.servicesContainer
+          .find(".services-controls-container")
+          .animate({ opacity: 1 }, this.animDuration);
+      }
+
+      if (scrollVal > this.whoweareContainer.offset().top) {
+        this.whoweareContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-intro-container")
+          .delay(100)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+      } else if (
+        scrollVal >
+        this.whoweareContainer.prev().innerHeight() / 2 +
+          this.whoweareContainer.offset().top -
+          this.whoweareContainer.prev().innerHeight()
+      ) {
+        this.whoweareContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-intro-container")
+          .delay(100)
           .animate({ left: 0, opacity: 1 }, this.animDuration);
       }
     };
@@ -309,7 +362,7 @@ $(() => {
 
   about.lpLoadEvents();
 
-  windowIns.homeAnimEvent($(window).scrollTop());
+  windowIns.homeAnimEvent($(window).pageYOffset);
 
   $(window).on("scroll", (e) => windowIns.scrollEvent(e));
 });
