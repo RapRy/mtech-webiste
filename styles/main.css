@@ -12,6 +12,7 @@
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 .pill-button {
@@ -203,6 +204,10 @@ a {
   text-transform: uppercase;
   padding-right: 2rem;
   padding-bottom: 1.5rem;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .hero-container p {
@@ -214,6 +219,10 @@ a {
   max-width: 700px;
   float: right;
   text-align: justify;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .hero-container a {
@@ -234,6 +243,10 @@ a {
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .hero-container a:hover, .hero-container a:active {
@@ -259,6 +272,9 @@ a {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  position: relative;
+  left: -50%;
+  top: 0;
   margin: 0 20px;
 }
 
@@ -392,6 +408,9 @@ a {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  position: relative;
+  left: -50%;
+  top: 0;
 }
 
 .whoweare-container h3::after {
@@ -508,6 +527,9 @@ a {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  position: relative;
+  left: -50%;
+  top: 0;
   margin: 0 20px 10px;
 }
 
@@ -656,6 +678,9 @@ a {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  position: relative;
+  left: -50%;
+  top: 0;
 }
 
 .partners-container h3::after {
@@ -713,6 +738,9 @@ a {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  position: relative;
+  left: -50%;
+  top: 0;
   margin-bottom: 10px;
 }
 

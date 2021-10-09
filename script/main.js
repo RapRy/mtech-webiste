@@ -245,9 +245,62 @@ $(() => {
     };
   }
 
+  class Window {
+    constructor() {
+      this.animDuration = 800;
+      this.heroContainer = $(".hero-container");
+      this.servicesContainer = $(".services-container");
+    }
+
+    homeAnimEvent = (scrollVal) => {
+      console.log(scrollVal);
+      console.log($(window).height());
+      console.log(this.servicesContainer.outerHeight());
+      if (this.heroContainer.offset().top === 0) {
+        this.heroContainer
+          .find("h1")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+        this.heroContainer
+          .find("p")
+          .delay(100)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+        this.heroContainer
+          .find("a")
+          .delay(300)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+      }
+
+      if ($(window).height() > 0) {
+        console.log("scroll is 0");
+        this.servicesContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+      }
+    };
+
+    scrollEvent = (e) => {
+      const scrollVal = e.currentTarget.pageYOffset;
+
+      this.homeAnimEvent(scrollVal);
+
+      if ($(e.target).scrollTop() > 100) {
+        $(".header-container").css({ background: "#fff" });
+        $(".menu-burger").addClass("scrolledY");
+        return;
+      }
+
+      if ($(e.target).scrollTop() < 100) {
+        $(".header-container").css({ background: "transparent" });
+        $(".menu-burger").removeClass("scrolledY");
+        return;
+      }
+    };
+  }
+
   const navigation = new Navigation();
   const services = new Services();
   const about = new About();
+  const windowIns = new Window();
 
   navigation.menuCickEvent();
   navigation.loadEvents();
@@ -256,17 +309,7 @@ $(() => {
 
   about.lpLoadEvents();
 
-  $(window).on("scroll", (e) => {
-    if ($(e.target).scrollTop() > 100) {
-      $(".header-container").css({ background: "#fff" });
-      $(".menu-burger").addClass("scrolledY");
-      return;
-    }
+  windowIns.homeAnimEvent($(window).scrollTop());
 
-    if ($(e.target).scrollTop() < 100) {
-      $(".header-container").css({ background: "transparent" });
-      $(".menu-burger").removeClass("scrolledY");
-      return;
-    }
-  });
+  $(window).on("scroll", (e) => windowIns.scrollEvent(e));
 });
