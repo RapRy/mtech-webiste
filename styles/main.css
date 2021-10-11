@@ -275,6 +275,7 @@ a {
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
   margin: 0 20px;
 }
 
@@ -416,6 +417,7 @@ a {
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
 }
 
 .whoweare-container h3::after {
@@ -429,10 +431,6 @@ a {
 
 .whoweare-container .whoweare-intro-container {
   margin-top: 3rem;
-  position: relative;
-  top: 0;
-  left: 50%;
-  opacity: 0;
 }
 
 .whoweare-container .whoweare-intro-container p {
@@ -443,6 +441,10 @@ a {
   line-height: 25px;
   text-align: justify;
   margin-bottom: 2rem;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .whoweare-container .whoweare-intro-container a {
@@ -463,6 +465,10 @@ a {
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .whoweare-container .whoweare-intro-container a:hover, .whoweare-container .whoweare-intro-container a:active {
@@ -483,6 +489,10 @@ a {
           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .whoweare-container .whoweare-others-container .whoweare-other {
@@ -539,6 +549,7 @@ a {
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
   margin: 0 20px 10px;
 }
 
@@ -551,7 +562,7 @@ a {
   margin-top: 10px;
 }
 
-.team-container p {
+.team-container > p {
   font-family: "Raleway", sans-serif;
   font-size: 0.85rem;
   line-height: 1.8;
@@ -559,6 +570,10 @@ a {
   margin-bottom: 2rem;
   text-align: justify;
   margin: 0 20px;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .team-container #team-list {
@@ -573,6 +588,10 @@ a {
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   overflow: hidden;
+  position: relative;
+  top: 50px;
+  left: 0;
+  opacity: 0;
 }
 
 .team-container #team-list .team-member .team-photo-container {
@@ -619,6 +638,7 @@ a {
   height: 30px;
   width: 300px;
   margin: 0 auto;
+  opacity: 0;
 }
 
 .team-container .team-controls-container .glide-custom-array {
@@ -690,6 +710,7 @@ a {
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
 }
 
 .partners-container h3::after {
@@ -716,6 +737,8 @@ a {
 
 .partners-container .partners .partner-logo-container {
   position: relative;
+  top: 20%;
+  opacity: 0;
 }
 
 .partners-container .partners .partner-logo-container:hover img:first-child, .partners-container .partners .partner-logo-container:active img:first-child {
@@ -750,6 +773,7 @@ a {
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
   margin-bottom: 10px;
 }
 
@@ -769,6 +793,10 @@ a {
   color: #000000;
   margin-bottom: 2rem;
   text-align: justify;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .getintouch-container .form-container {
@@ -777,6 +805,10 @@ a {
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   padding: 1rem;
+  position: relative;
+  top: 0;
+  left: 50%;
+  opacity: 0;
 }
 
 .getintouch-container .form-container .input-container {

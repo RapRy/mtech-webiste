@@ -69,6 +69,7 @@ $card-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   position: relative;
   left: -50%;
   top: 0;
+  opacity: 0;
 
   &::after {
     content: "";
@@ -415,10 +416,6 @@ a {
 
   .whoweare-intro-container {
     margin-top: 3rem;
-    position: relative;
-    top: 0;
-    left: 50%;
-    opacity: 0;
 
     p {
       font-family: $font-primary;
@@ -428,10 +425,18 @@ a {
       line-height: 25px;
       text-align: justify;
       margin-bottom: 2rem;
+      position: relative;
+      top: 0;
+      left: 50%;
+      opacity: 0;
     }
 
     a {
       @include pill-button(0.8rem 2rem, 0.85rem, $primary-main, 1rem);
+      position: relative;
+      top: 0;
+      left: 50%;
+      opacity: 0;
     }
   }
 
@@ -441,6 +446,10 @@ a {
     box-shadow: $card-shadow;
     padding: 0.5rem 1.5rem;
     border-radius: 1rem;
+    position: relative;
+    top: 0;
+    left: 50%;
+    opacity: 0;
 
     .whoweare-other {
       display: flex;
@@ -489,7 +498,7 @@ a {
     margin: 0 20px 10px;
   }
 
-  p {
+  > p {
     font-family: $font-primary;
     font-size: 0.85rem;
     line-height: 1.8;
@@ -497,6 +506,10 @@ a {
     margin-bottom: 2rem;
     text-align: justify;
     margin: 0 20px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    opacity: 0;
   }
 
   #team-list {
@@ -509,6 +522,10 @@ a {
       height: 300px;
       box-shadow: $card-shadow;
       overflow: hidden;
+      position: relative;
+      top: 50px;
+      left: 0;
+      opacity: 0;
 
       .team-photo-container {
         position: relative;
@@ -555,6 +572,7 @@ a {
     height: 30px;
     width: 300px;
     margin: 0 auto;
+    opacity: 0;
 
     .glide-custom-array {
       position: absolute;
@@ -631,6 +649,8 @@ a {
 
     .partner-logo-container {
       position: relative;
+      top: 20%;
+      opacity: 0;
 
       &:hover,
       &:active {
@@ -673,6 +693,10 @@ a {
     color: $primary-dark;
     margin-bottom: 2rem;
     text-align: justify;
+    position: relative;
+    top: 0;
+    left: 50%;
+    opacity: 0;
   }
 
   .form-container {
@@ -680,6 +704,10 @@ a {
     border-radius: 1rem;
     box-shadow: $card-shadow;
     padding: 1rem;
+    position: relative;
+    top: 0;
+    left: 50%;
+    opacity: 0;
 
     .input-container {
       margin: 10px 0;

@@ -252,6 +252,9 @@ $(() => {
       this.heroContainer = $(".hero-container");
       this.servicesContainer = $(".services-container");
       this.whoweareContainer = $(".whoweare-container");
+      this.teamContainer = $(".team-container");
+      this.partnersContainer = $(".partners-container");
+      this.getintouchContainer = $(".getintouch-container");
     }
 
     homeAnimEvent = (scrollVal) => {
@@ -311,8 +314,18 @@ $(() => {
           .animate({ left: 0, opacity: 1 }, this.animDuration);
 
         this.whoweareContainer
-          .find(".whoweare-intro-container")
+          .find(".whoweare-intro-container p")
           .delay(100)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-intro-container a")
+          .delay(300)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-others-container")
+          .delay(500)
           .animate({ left: 0, opacity: 1 }, this.animDuration);
       } else if (
         scrollVal >
@@ -325,7 +338,123 @@ $(() => {
           .animate({ left: 0, opacity: 1 }, this.animDuration);
 
         this.whoweareContainer
-          .find(".whoweare-intro-container")
+          .find(".whoweare-intro-container p")
+          .delay(100)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-intro-container a")
+          .delay(300)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.whoweareContainer
+          .find(".whoweare-others-container")
+          .delay(500)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+      }
+
+      if (scrollVal > this.teamContainer.offset().top) {
+        let cardDelay = 200;
+
+        this.teamContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.teamContainer
+          .find("> p")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.teamContainer.find(".team-member").each((i, card) => {
+          $(card)
+            .delay(cardDelay)
+            .animate({ top: 0, opacity: 1 }, this.animDuration);
+
+          cardDelay += 200;
+        });
+
+        this.teamContainer
+          .find(".team-controls-container")
+          .animate({ opacity: 1 }, this.animDuration);
+      } else if (
+        scrollVal >
+        this.teamContainer.prev().innerHeight() / 2 +
+          this.teamContainer.offset().top -
+          this.teamContainer.prev().innerHeight()
+      ) {
+        let cardDelay = 200;
+        this.teamContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.teamContainer
+          .find("> p")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.teamContainer.find(".team-member").each((i, card) => {
+          $(card)
+            .delay(cardDelay)
+            .animate({ top: 0, opacity: 1 }, this.animDuration);
+
+          cardDelay += 200;
+        });
+
+        this.teamContainer
+          .find(".team-controls-container")
+          .animate({ opacity: 1 }, this.animDuration);
+      }
+
+      if (scrollVal > this.partnersContainer.offset().top) {
+        this.partnersContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.partnersContainer
+          .find("a")
+          .animate({ top: 0, opacity: 1 }, this.animDuration);
+      } else if (
+        scrollVal >
+        this.partnersContainer.prev().innerHeight() / 2 +
+          this.partnersContainer.offset().top -
+          this.partnersContainer.prev().innerHeight()
+      ) {
+        this.partnersContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.partnersContainer
+          .find("a")
+          .animate({ top: 0, opacity: 1 }, this.animDuration);
+      }
+
+      if (scrollVal > this.getintouchContainer.offset().top) {
+        this.getintouchContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.getintouchContainer
+          .find("p")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.getintouchContainer
+          .find(".form-container")
+          .delay(100)
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+      } else if (
+        scrollVal >
+        this.getintouchContainer.prev().innerHeight() / 2 +
+          this.getintouchContainer.offset().top -
+          this.getintouchContainer.prev().innerHeight()
+      ) {
+        this.getintouchContainer
+          .find("h3")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.getintouchContainer
+          .find("p")
+          .animate({ left: 0, opacity: 1 }, this.animDuration);
+
+        this.getintouchContainer
+          .find(".form-container")
           .delay(100)
           .animate({ left: 0, opacity: 1 }, this.animDuration);
       }
