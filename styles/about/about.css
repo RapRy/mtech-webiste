@@ -1,0 +1,744 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.inner-container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.pill-button {
+  background-color: #b41b21;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  padding: 0.8rem 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1.3rem;
+  -webkit-box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.24);
+          box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.24);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.pill-button:hover, .pill-button:active {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.pill-button i {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+
+.header-container .header-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-container .brand-container {
+  background-color: #ffffff;
+  padding: 1rem 0.8rem;
+  border-radius: 0 0 1rem 1rem;
+  cursor: pointer;
+}
+
+.header-container .menu-container .menu-burger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+.header-container .menu-container .menu-burger::before {
+  content: "";
+  width: inherit;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-container .menu-container .menu-burger::after {
+  content: "";
+  width: inherit;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.header-container .menu-container .menu-burger span {
+  width: inherit;
+  height: 2px;
+  display: block;
+  background-color: #ffffff;
+  position: absolute;
+  top: 16px;
+  left: 0;
+}
+
+.header-container .menu-container .menu-burger.scrolledY::before, .header-container .menu-container .menu-burger.scrolledY::after,
+.header-container .menu-container .menu-burger.scrolledY span {
+  background-color: #000000;
+}
+
+.header-container .menu-container .main-sidemenu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.36);
+  display: none;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu {
+  position: absolute;
+  top: 0;
+  right: -270px;
+  background-color: #000000;
+  width: 270px;
+  height: 100vh;
+  padding-top: 1.5rem;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close {
+  cursor: pointer;
+  float: right;
+  margin-right: 2rem;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close i {
+  color: #ffffff;
+  font-size: 1.5rem;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close i:active, .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close i:hover {
+  color: #b41b21;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu {
+  padding: 4rem 0 0 2rem;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container {
+  padding-bottom: 2rem;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link-container {
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link,
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
+}
+
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link:active, .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link:hover,
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link:active,
+.header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link:hover {
+  color: #b41b21;
+}
+
+.banner-container {
+  background: url(../../assets/who-we-are-bg.jpg) no-repeat top center;
+  background-size: cover;
+  position: relative;
+  z-index: 4;
+}
+
+.banner-container .inner-container {
+  height: 130px;
+  position: relative;
+}
+
+.banner-container .inner-container h4 {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: -12px;
+  left: 90px;
+}
+
+.main-about-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.main-about-container .side-quick-links-container {
+  position: fixed;
+  top: 0;
+  left: -92%;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-list {
+  background-color: #f5f5f5;
+  width: 92%;
+  height: 100%;
+  padding-top: 180px;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-list li {
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-list li:last-child {
+  margin-bottom: 0;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-list li a {
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-list li a:hover, .main-about-container .side-quick-links-container .side-quick-links .side-quick-list li a:active {
+  color: #b41b21;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-btn-container {
+  margin-top: 180px;
+  background: #f5f5f5;
+  border-radius: 0 15px 15px 0;
+  width: 8%;
+  height: 11%;
+  cursor: pointer;
+}
+
+.main-about-container .side-quick-links-container .side-quick-links .side-quick-btn-container span {
+  display: block;
+  position: absolute;
+  font-weight: 600;
+  right: -15px;
+  top: 220px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  color: #b41b21;
+}
+
+.main-about-container .main-about {
+  width: 90%;
+  position: relative;
+  top: 0;
+  left: 10%;
+  padding: 20px 0;
+}
+
+.main-about-container .main-about #about,
+.main-about-container .main-about #mission,
+.main-about-container .main-about #vision,
+.main-about-container .main-about #core-values {
+  padding: 0 20px;
+}
+
+.main-about-container .main-about .heading {
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.main-about-container .main-about .sub-heading {
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.main-about-container .main-about .parag {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: #000000;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+}
+
+.main-about-container .main-about .qoute {
+  color: #b41b21;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.main-about-container .main-about .qoute::before, .main-about-container .main-about .qoute::after {
+  content: '"';
+  font-size: 3rem;
+  font-weight: 700;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.main-about-container .main-about .qoute::before {
+  margin-right: 5px;
+}
+
+.main-about-container .main-about #teams h5 {
+  padding: 0 20px;
+}
+
+.main-about-container .main-about #teams .management,
+.main-about-container .main-about #teams .marketing,
+.main-about-container .main-about #teams .technical {
+  margin-bottom: 3rem;
+}
+
+.main-about-container .main-about #teams .management:last-child,
+.main-about-container .main-about #teams .marketing:last-child,
+.main-about-container .main-about #teams .technical:last-child {
+  margin-bottom: 0;
+}
+
+.main-about-container .main-about #teams .management > p,
+.main-about-container .main-about #teams .marketing > p,
+.main-about-container .main-about #teams .technical > p {
+  padding: 0 20px;
+}
+
+.main-about-container .main-about #teams #management-list,
+.main-about-container .main-about #teams #marketing-list,
+.main-about-container .main-about #teams #technical-list {
+  margin: 3rem 0 2rem;
+  padding-left: 20px;
+}
+
+.main-about-container .main-about #teams #management-list .team-member,
+.main-about-container .main-about #teams #marketing-list .team-member,
+.main-about-container .main-about #teams #technical-list .team-member {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  height: 460px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-about-container .main-about #teams #management-list .team-member .team-photo-container,
+.main-about-container .main-about #teams #marketing-list .team-member .team-photo-container,
+.main-about-container .main-about #teams #technical-list .team-member .team-photo-container {
+  position: relative;
+  background-color: #a7a8ac;
+  height: 120px;
+  margin-bottom: 5rem;
+}
+
+.main-about-container .main-about #teams #management-list .team-member .team-photo-container img,
+.main-about-container .main-about #teams #marketing-list .team-member .team-photo-container img,
+.main-about-container .main-about #teams #technical-list .team-member .team-photo-container img {
+  width: 140px;
+  height: 140px;
+  outline: #ffffff solid 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main-about-container .main-about #teams #management-list .team-member h4,
+.main-about-container .main-about #teams #marketing-list .team-member h4,
+.main-about-container .main-about #teams #technical-list .team-member h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 700;
+  padding: 0 20px 10px;
+  text-align: center;
+}
+
+.main-about-container .main-about #teams #management-list .team-member .pos,
+.main-about-container .main-about #teams #marketing-list .team-member .pos,
+.main-about-container .main-about #teams #technical-list .team-member .pos {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: #b41b21;
+  font-weight: 600;
+  padding: 0 20px 1rem;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+}
+
+.main-about-container .main-about #teams #management-list .team-member .role-desc,
+.main-about-container .main-about #teams #marketing-list .team-member .role-desc,
+.main-about-container .main-about #teams #technical-list .team-member .role-desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  color: #000000;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: justify;
+  white-space: normal;
+  padding: 0 20px;
+}
+
+.main-about-container .main-about #teams .management-controls-container,
+.main-about-container .main-about #teams .marketing-controls-container,
+.main-about-container .main-about #teams .technical-controls-container {
+  position: relative;
+  height: 30px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.main-about-container .main-about #teams .management-controls-container .glide-custom-array,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+}
+
+.main-about-container .main-about #teams .management-controls-container .glide-custom-array:first-child,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array:first-child,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array:first-child {
+  left: 15%;
+}
+
+.main-about-container .main-about #teams .management-controls-container .glide-custom-array:last-child,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array:last-child,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array:last-child {
+  right: 15%;
+}
+
+.main-about-container .main-about #teams .management-controls-container .glide-custom-array i,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array i,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array i {
+  font-size: 1.5rem;
+  color: #a7a8ac;
+}
+
+.main-about-container .main-about #teams .management-controls-container .glide-custom-array i:hover, .main-about-container .main-about #teams .management-controls-container .glide-custom-array i:active,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array i:hover,
+.main-about-container .main-about #teams .marketing-controls-container .glide-custom-array i:active,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array i:hover,
+.main-about-container .main-about #teams .technical-controls-container .glide-custom-array i:active {
+  color: #b41b21;
+}
+
+.main-about-container .main-about #teams .management-controls-container #management-bullets,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.main-about-container .main-about #teams .management-controls-container #management-bullets .management-bullet,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .marketing-bullet,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .technical-bullet,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .management-bullet,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .marketing-bullet,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .technical-bullet,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .management-bullet,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .marketing-bullet,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .technical-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .management-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .marketing-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .technical-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .management-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .marketing-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .technical-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .management-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .marketing-bullet,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .technical-bullet,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .management-bullet,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .marketing-bullet,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .technical-bullet,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .management-bullet,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .marketing-bullet,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .technical-bullet,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .management-bullet,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .marketing-bullet,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .technical-bullet {
+  display: inline-block;
+  border-radius: 2rem;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: #a7a8ac;
+}
+
+.main-about-container .main-about #teams .management-controls-container #management-bullets .management-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .management-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .management-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .management-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .management-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .management-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .management-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .management-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .technical-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .management-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .marketing-bullet:active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .technical-bullet:active {
+  background-color: #b41b21;
+}
+
+.main-about-container .main-about #teams .management-controls-container #management-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .technical-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .management-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .marketing-bullet.glide__bullet--active,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .technical-bullet.glide__bullet--active {
+  background-color: #b41b21;
+}
+
+.main-about-container .main-about #teams .management-controls-container #management-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #management-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #marketing-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .management-controls-container #technical-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #management-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #marketing-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .marketing-controls-container #technical-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #management-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #marketing-bullets .technical-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .management-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .marketing-bullet:last-child,
+.main-about-container .main-about #teams .technical-controls-container #technical-bullets .technical-bullet:last-child {
+  margin-right: 0;
+}
+
+.footer-container {
+  background-color: #ffffff;
+  padding: 3rem 0;
+}
+
+.footer-container .footer .footer-grid {
+  margin-bottom: 3rem;
+}
+
+.footer-container .footer .footer-grid img {
+  width: 40%;
+  margin-bottom: 1.5rem;
+}
+
+.footer-container .footer .footer-grid p {
+  font-family: "Open Sans", sans-serif;
+  font-family: 400;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.footer-container .footer .footer-grid span {
+  margin-bottom: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #000000;
+}
+
+.footer-container .footer .footer-grid span:last-child {
+  margin-left: 2rem;
+}
+
+.footer-container .footer .footer-grid span i {
+  font-size: 0.8rem;
+  margin-right: 2px;
+}
+
+.footer-container .footer .footer-grid h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.footer-container .footer .footer-grid .social-link {
+  margin-right: 1rem;
+}
+
+.footer-container .footer .footer-grid .social-link i {
+  color: #b41b21;
+  font-size: 2rem;
+}
+
+.footer-container .footer .footer-grid .social-link i:hover, .footer-container .footer .footer-grid .social-link i:active {
+  color: #a7a8ac;
+}
+
+.footer-container .footer .footer-grid .quick-link {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #b41b21;
+}
+
+.footer-container .footer .footer-grid .quick-link:hover, .footer-container .footer .footer-grid .quick-link:active {
+  color: #a7a8ac;
+}
+
+.footer-container .copyright {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.footer-container .copyright a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #000000;
+}
+
+.footer-container .copyright a:hover, .footer-container .copyright a:active {
+  color: #b41b21;
+}
+
+.glide__slides {
+  overflow: visible;
+}
+/*# sourceMappingURL=about.css.map */

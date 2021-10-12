@@ -1,0 +1,319 @@
+@import "../global";
+
+.banner-container {
+  background: url(../../assets/who-we-are-bg.jpg) no-repeat top center;
+  background-size: cover;
+  position: relative;
+  z-index: 4;
+
+  .inner-container {
+    height: 130px;
+    position: relative;
+
+    h4 {
+      color: $secondary-light;
+      font-family: $font-primary;
+      font-size: 3rem;
+      font-weight: 700;
+      position: absolute;
+      bottom: -12px;
+      left: 90px;
+    }
+  }
+}
+
+.main-about-container {
+  overflow: hidden;
+  position: relative;
+
+  .side-quick-links-container {
+    position: fixed;
+    top: 0;
+    left: -92%;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+
+    .side-quick-links {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      height: 100%;
+      position: relative;
+
+      .side-quick-list {
+        background-color: $secondary-main;
+        width: 92%;
+        height: 100%;
+        padding-top: 180px;
+
+        li {
+          text-align: right;
+          padding-right: 20px;
+          margin-bottom: 30px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            font-family: $font-primary;
+            color: $primary-dark;
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            &:hover,
+            &:active {
+              color: $primary-main;
+            }
+          }
+        }
+      }
+
+      .side-quick-btn-container {
+        margin-top: 180px;
+        background: $secondary-main;
+        border-radius: 0 15px 15px 0;
+        width: 8%;
+        height: 11%;
+        cursor: pointer;
+
+        span {
+          display: block;
+          position: absolute;
+          font-weight: 600;
+          right: -15px;
+          top: 220px;
+          transform: rotate(-90deg);
+          transform-origin: center;
+          font-family: $font-primary;
+          font-size: 0.8rem;
+          color: $primary-main;
+        }
+      }
+    }
+  }
+
+  .main-about {
+    width: 90%;
+    position: relative;
+    top: 0;
+    left: 10%;
+    padding: 20px 0;
+    #about,
+    #mission,
+    #vision,
+    #core-values {
+      padding: 0 20px;
+    }
+
+    .heading {
+      font-size: 1.2rem;
+      font-family: $font-primary;
+      color: $primary-dark;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .sub-heading {
+      font-size: 1rem;
+      font-family: $font-primary;
+      color: $primary-dark;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .parag {
+      font-family: $font-primary;
+      font-size: 0.9rem;
+      color: $primary-dark;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: justify;
+    }
+
+    .qoute {
+      color: $primary-main;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 700;
+      font-family: $font-primary;
+      margin-bottom: 1rem;
+
+      &::before,
+      &::after {
+        content: '"';
+        font-size: 3rem;
+        font-weight: 700;
+        vertical-align: middle;
+        color: $primary-dark;
+      }
+
+      &::before {
+        margin-right: 5px;
+      }
+    }
+
+    #teams {
+      h5 {
+        padding: 0 20px;
+      }
+
+      .management,
+      .marketing,
+      .technical {
+        margin-bottom: 3rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        > p {
+          padding: 0 20px;
+        }
+      }
+      #management-list,
+      #marketing-list,
+      #technical-list {
+        margin: 3rem 0 2rem;
+        padding-left: 20px;
+
+        .team-member {
+          background-color: $secondary-light;
+          border-radius: 1rem;
+          height: 460px;
+          overflow: hidden;
+          position: relative;
+          //   top: 50px;
+          //   left: 0;
+          //   opacity: 0;
+
+          .team-photo-container {
+            position: relative;
+            background-color: $secondary-dark;
+            height: 120px;
+            margin-bottom: 5rem;
+
+            img {
+              width: 140px;
+              height: 140px;
+              outline: $secondary-light solid 7px;
+              border-radius: 50%;
+              position: absolute;
+              top: 2rem;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          h4 {
+            font-family: $font-primary;
+            font-size: 1rem;
+            color: $primary-dark;
+            font-weight: 700;
+            padding: 0 20px 10px;
+            text-align: center;
+          }
+
+          .pos {
+            font-family: $font-primary;
+            font-size: 0.9rem;
+            color: $primary-main;
+            font-weight: 600;
+            padding: 0 20px 1rem;
+            line-height: 1.4;
+            text-align: center;
+            white-space: normal;
+          }
+
+          .role-desc {
+            font-family: $font-primary;
+            font-size: 0.8rem;
+            color: $primary-dark;
+            font-weight: 400;
+            line-height: 22px;
+            text-align: justify;
+            white-space: normal;
+            padding: 0 20px;
+          }
+        }
+      }
+
+      .management-controls-container,
+      .marketing-controls-container,
+      .technical-controls-container {
+        position: relative;
+        height: 30px;
+        width: 300px;
+        margin: 0 auto;
+        // opacity: 0;
+
+        .glide-custom-array {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: transparent;
+
+          &:first-child {
+            left: 15%;
+          }
+
+          &:last-child {
+            right: 15%;
+          }
+
+          i {
+            font-size: 1.5rem;
+            color: $secondary-dark;
+
+            &:hover,
+            &:active {
+              color: $primary-main;
+            }
+          }
+        }
+
+        #management-bullets,
+        #marketing-bullets,
+        #technical-bullets {
+          position: absolute;
+          left: 50%;
+          bottom: 50%;
+          transform: translate(-50%, 50%);
+
+          .management-bullet,
+          .marketing-bullet,
+          .technical-bullet {
+            display: inline-block;
+            border-radius: 2rem;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            margin-top: 5px;
+            background-color: $secondary-dark;
+
+            &:active {
+              background-color: $primary-main;
+            }
+
+            &.glide__bullet--active {
+              background-color: $primary-main;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "../footer";
+
+// custom glide js styles
+.glide__slides {
+  overflow: visible;
+}
