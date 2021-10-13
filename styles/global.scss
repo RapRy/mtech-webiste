@@ -71,6 +71,11 @@ $card-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   top: 0;
   opacity: 0;
 
+  @media all and (min-width: 1020px) {
+    text-align: center;
+    font-size: 2rem;
+  }
+
   &::after {
     content: "";
     display: block;
@@ -78,6 +83,13 @@ $card-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
     height: 3px;
     background-color: $color;
     margin-top: 10px;
+
+    @media all and (min-width: 1020px) {
+      position: relative;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -94,6 +106,10 @@ $card-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
   margin: 0 auto;
   padding: 0 20px;
   overflow: hidden;
+
+  @media all and (min-width: 1280px) {
+    padding: 0;
+  }
 }
 
 .pill-button {
@@ -115,6 +131,12 @@ a {
   z-index: 10;
   transition: background 300ms ease-in-out;
 
+  @media all and (min-width: 1020px) {
+    .inner-container {
+      overflow: visible;
+    }
+  }
+
   .header-flex-container {
     display: flex;
     flex-flow: row wrap;
@@ -127,6 +149,15 @@ a {
     padding: 1rem 0.8rem;
     border-radius: 0 0 1rem 1rem;
     cursor: pointer;
+
+    @media all and (min-width: 720px) {
+      text-align: center;
+      padding: 1rem 0.5rem;
+
+      img {
+        width: 80%;
+      }
+    }
   }
 
   .menu-container {
@@ -135,6 +166,10 @@ a {
       height: 18px;
       position: relative;
       cursor: pointer;
+
+      @media all and (min-width: 1020px) {
+        display: none;
+      }
 
       &::before {
         content: "";
@@ -182,6 +217,13 @@ a {
       background-color: rgba(0, 0, 0, 0.36);
       display: none;
 
+      @media all and (min-width: 1020px) {
+        display: block;
+        position: static;
+        background-color: transparent;
+        height: auto;
+      }
+
       .main-sidemenu {
         position: absolute;
         top: 0;
@@ -191,10 +233,22 @@ a {
         height: 100vh;
         padding-top: 1.5rem;
 
+        @media all and (min-width: 1020px) {
+          position: static;
+          width: 100%;
+          height: auto;
+          padding-top: 0;
+          background-color: transparent;
+        }
+
         .main-mobile-close {
           cursor: pointer;
           float: right;
           margin-right: 2rem;
+
+          @media all and (min-width: 1020px) {
+            display: none;
+          }
 
           i {
             color: $secondary-light;
@@ -211,12 +265,56 @@ a {
         .main-mobile-sidemenu {
           padding: 4rem 0 0 2rem;
 
+          @media all and (min-width: 1020px) {
+            padding: 0;
+          }
+
           .menu-mobile-link-container {
             padding-bottom: 2rem;
+
+            @media all and (min-width: 1020px) {
+              display: inline-block;
+              position: relative;
+              padding: 1rem 0;
+              margin-left: 30px;
+              position: relative;
+
+              &:hover {
+                .submenu-container {
+                  @media all and (min-width: 1020px) {
+                    display: block;
+                  }
+                }
+              }
+            }
+
+            .submenu-container {
+              @media all and (min-width: 1020px) {
+                display: none;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 150px;
+                background-color: $primary-dark;
+                padding: 1rem;
+                border-radius: 10px;
+
+                &:hover {
+                  display: block;
+                }
+              }
+            }
 
             .submenu-mobile-link-container {
               padding-top: 2rem;
               padding-left: 1rem;
+              @media all and (min-width: 1020px) {
+                padding-left: 0;
+
+                &:first-child {
+                  padding-top: 0;
+                }
+              }
             }
 
             .menu-mobile-link,
@@ -229,7 +327,7 @@ a {
 
               &:active,
               &:hover {
-                color: $primary-main;
+                color: $primary-main !important;
               }
             }
           }

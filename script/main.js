@@ -4,7 +4,7 @@ $(() => {
       this.qlToggle = false;
       this.menuToggle = false;
       this.menuData = [
-        { title: "Home", slug: "home", sub: null, url: "index.php" },
+        { title: "Home", slug: "", sub: null, url: "index.php" },
         {
           title: "About",
           slug: "about",
@@ -74,7 +74,20 @@ $(() => {
 
     sideQLEvents = () => {
       $(".side-quick-btn-container").on("click", this.toggleSideQL);
-      $(".side-quick-list li a").on("click", this.toggleSideQL);
+
+      if ($(window).width() > 1120) {
+        $(window).on("scroll", (e) => {
+          if (e.currentTarget.pageYOffset > 120) {
+            $(".side-quick-list").css({ paddingTop: "100px" });
+          } else {
+            $(".side-quick-list").css({ paddingTop: "315px" });
+          }
+        });
+        return;
+      } else {
+        $(".side-quick-list li a").on("click", this.toggleSideQL);
+        $(".side-quick-list").css({ paddingTop: "315px" });
+      }
     };
 
     menuCickEvent = () => {
@@ -86,18 +99,34 @@ $(() => {
       this.menuData.forEach((data, ind) => {
         $(".main-mobile-sidemenu").append(`
           <div class="menu-mobile-link-container">
-            <a class="menu-mobile-link" href="${data.url}#${data.slug}">${data.title}</a>
+            <a class="menu-mobile-link" href="${data.url}${
+          data.slug !== "" ? `#${data.slug}` : ""
+        }">${data.title}</a>
+            ${data.sub !== null ? `<div class="submenu-container"></div>` : ""}
           </div>
         `);
 
         if (data.sub !== null) {
           data.sub.forEach((subData) => {
-            $(".menu-mobile-link-container").eq(ind).append(`
+            $(".menu-mobile-link-container").eq(ind).find(".submenu-container")
+              .append(`
               <div class="submenu-mobile-link-container">
                 <a class="submenu-mobile-link" href="${data.url}#${subData.slug}">${subData.title}</a>
               </div>
             `);
           });
+        }
+      });
+
+      if ($(window).width() > 720) {
+        $(".brand-container img").attr("src", "./assets/mobi-logo-large.png");
+      }
+
+      $(window).on("resize", () => {
+        if ($(window).width() > 720) {
+          $(".brand-container img").attr("src", "./assets/mobi-logo-large.png");
+        } else {
+          $(".brand-container img").attr("src", "./assets/mobi-logo-small.png");
         }
       });
     };
@@ -149,9 +178,25 @@ $(() => {
           icon: "fa-chalkboard-teacher",
         },
       ];
+      this.perView = 1;
     }
 
     lpLoadEvents = () => {
+      if ($(window).width() > 780) {
+        this.perView = 2;
+      } else if ($(window).width() > 1020) {
+        console.log($(window));
+        if ($(".glide-service").length === 1) {
+          const serviceList = $("#services-list")
+            .removeClass("glide__slides")
+            .css({ width: "100%" })
+            .clone(true);
+          $(".glide-service").remove();
+          $(".services-container").append(serviceList);
+          $(".service-card").removeClass("glide__slide");
+        }
+      }
+
       if (window.location.href.includes("about.php")) {
         return;
       } else {
@@ -176,8 +221,25 @@ $(() => {
           gap: 20,
           animationDuration: 300,
           rewind: false,
+          perView: this.perView,
         }).mount();
       }
+    };
+
+    lpResizeEvents = () => {
+      $(window).on("resize", () => {
+        if ($(window).width() > 1020) {
+          if ($(".glide-service").length === 1) {
+            const serviceList = $("#services-list")
+              .removeClass("glide__slides")
+              .css({ width: "100%" })
+              .clone(true);
+            $(".glide-service").remove();
+            $(".services-container").append(serviceList);
+            $(".service-card").removeClass("glide__slide");
+          }
+        }
+      });
     };
   }
 
@@ -345,9 +407,16 @@ $(() => {
           description: `Maecenas sed egestas velit. Duis sodales tincidunt felis, nec porta nibh posuere vehicula.`,
         },
       ];
+      this.perView = 1;
     }
 
     lpLoadEvents = () => {
+      if ($(window).width() > 780) {
+        this.perView = 2;
+      } else if ($(window).width() > 1020) {
+        this.perView = 3;
+      }
+
       this.lpData.forEach((data) => {
         $(".whoweare-others-container").append(`
               <div class="whoweare-other">
@@ -376,12 +445,23 @@ $(() => {
           `);
       });
 
-      new Glide(".glide-team", {
-        peek: { before: 0, after: 60 },
-        gap: 20,
-        animationDuration: 300,
-        rewind: false,
-      }).mount();
+      if ($(window).width() > 1020) {
+        new Glide(".glide-team", {
+          peek: { before: 0, after: 0 },
+          gap: 20,
+          animationDuration: 300,
+          rewind: false,
+          perView: 3,
+        }).mount();
+      } else {
+        new Glide(".glide-team", {
+          peek: { before: 0, after: 60 },
+          gap: 20,
+          animationDuration: 300,
+          rewind: false,
+          perView: this.perView,
+        }).mount();
+      }
     };
 
     loadManagement = () => {
@@ -689,12 +769,18 @@ $(() => {
       if ($(e.target).scrollTop() > 100) {
         $(".header-container").css({ background: "#fff" });
         $(".menu-burger").addClass("scrolledY");
+        if ($(window).width() > 1020) {
+          $(".menu-mobile-link").css({ color: "#000" });
+        }
         return;
       }
 
       if ($(e.target).scrollTop() < 100) {
         $(".header-container").css({ background: "transparent" });
         $(".menu-burger").removeClass("scrolledY");
+        if ($(window).width() > 1020) {
+          $(".menu-mobile-link").css({ color: "#fff" });
+        }
         return;
       }
     };
@@ -713,6 +799,7 @@ $(() => {
   }
 
   services.lpLoadEvents();
+  // services.lpResizeEvents();
 
   if (window.location.href.includes("about.php")) {
     about.loadManagement();

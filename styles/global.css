@@ -15,6 +15,12 @@
   overflow: hidden;
 }
 
+@media all and (min-width: 1280px) {
+  .inner-container {
+    padding: 0;
+  }
+}
+
 .pill-button {
   background-color: #b41b21;
   border-radius: 50px;
@@ -62,6 +68,12 @@ a {
   transition: background 300ms ease-in-out;
 }
 
+@media all and (min-width: 1020px) {
+  .header-container .inner-container {
+    overflow: visible;
+  }
+}
+
 .header-container .header-flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,11 +97,27 @@ a {
   cursor: pointer;
 }
 
+@media all and (min-width: 720px) {
+  .header-container .brand-container {
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+  .header-container .brand-container img {
+    width: 80%;
+  }
+}
+
 .header-container .menu-container .menu-burger {
   width: 24px;
   height: 18px;
   position: relative;
   cursor: pointer;
+}
+
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .menu-burger {
+    display: none;
+  }
 }
 
 .header-container .menu-container .menu-burger::before {
@@ -137,6 +165,15 @@ a {
   display: none;
 }
 
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container {
+    display: block;
+    position: static;
+    background-color: transparent;
+    height: auto;
+  }
+}
+
 .header-container .menu-container .main-sidemenu-container .main-sidemenu {
   position: absolute;
   top: 0;
@@ -147,10 +184,26 @@ a {
   padding-top: 1.5rem;
 }
 
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+    background-color: transparent;
+  }
+}
+
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close {
   cursor: pointer;
   float: right;
   margin-right: 2rem;
+}
+
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close {
+    display: none;
+  }
 }
 
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-close i {
@@ -168,13 +221,60 @@ a {
   padding: 4rem 0 0 2rem;
 }
 
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu {
+    padding: 0;
+  }
+}
+
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container {
   padding-bottom: 2rem;
+}
+
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 0;
+    margin-left: 30px;
+    position: relative;
+  }
+}
+
+@media all and (min-width: 1020px) and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container:hover .submenu-container {
+    display: block;
+  }
+}
+
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-container {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-container:hover {
+    display: block;
+  }
 }
 
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link-container {
   padding-top: 2rem;
   padding-left: 1rem;
+}
+
+@media all and (min-width: 1020px) {
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link-container {
+    padding-left: 0;
+  }
+  .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link-container:first-child {
+    padding-top: 0;
+  }
 }
 
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link,
@@ -190,6 +290,6 @@ a {
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link:active, .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .menu-mobile-link:hover,
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link:active,
 .header-container .menu-container .main-sidemenu-container .main-sidemenu .main-mobile-sidemenu .menu-mobile-link-container .submenu-mobile-link:hover {
-  color: #b41b21;
+  color: #b41b21 !important;
 }
 /*# sourceMappingURL=global.css.map */

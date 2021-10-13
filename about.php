@@ -197,13 +197,14 @@
                 ></a>
                 </div>
                 <div class="footer-grid">
-                <h4>Quick Links</h4>
-                <a href="#" alt="about" class="quick-link">About</a>
-                <a href="#" alt="careers" class="quick-link">Careers</a>
-                <a href="#" alt="projects" class="quick-link">Projects</a>
-                <a href="#" alt="partners" class="quick-link">Partners</a>
-                <a href="#" alt="contact" class="quick-link">Contact</a>
-                <a href="#" alt="services" class="quick-link">Services</a>
+                    <h4>Quick Links</h4>
+                    <a href="about.php#about" alt="about" class="quick-link">About</a>
+                    <a href="career.php" alt="careers" class="quick-link">Careers</a>
+                    <a href="projects.php" alt="projects" class="quick-link">Projects</a>
+                    <a href="partners.php" alt="partners" class="quick-link">Partners</a>
+                    <a href="contact.php" alt="contact" class="quick-link">Contact</a>
+                    <a href="services.php" alt="services" class="quick-link">Services</a>
+                    <a href="about.php#teams" alt="teams" class="quick-link">Teams</a>
                 </div>
             </div>
             <div class="inner-container">

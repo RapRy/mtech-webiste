@@ -10,6 +10,14 @@
     height: 130px;
     position: relative;
 
+    @media all and (min-width: 720px) {
+      height: 200px;
+    }
+
+    @media all and (min-width: 1020px) {
+      height: 250px;
+    }
+
     h4 {
       color: $secondary-light;
       font-family: $font-primary;
@@ -18,6 +26,17 @@
       position: absolute;
       bottom: -12px;
       left: 90px;
+
+      @media all and (min-width: 720px) {
+        font-size: 4rem;
+        bottom: -16px;
+      }
+
+      @media all and (min-width: 1020px) {
+        left: 200px;
+        font-size: 6rem;
+        bottom: -25px;
+      }
     }
   }
 }
@@ -26,6 +45,11 @@
   overflow: hidden;
   position: relative;
 
+  @media all and (min-width: 1020px) {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
   .side-quick-links-container {
     position: fixed;
     top: 0;
@@ -33,6 +57,10 @@
     width: 100%;
     height: 100vh;
     z-index: 2;
+
+    @media all and (min-width: 1020px) {
+      left: -75%;
+    }
 
     .side-quick-links {
       display: flex;
@@ -46,6 +74,15 @@
         width: 92%;
         height: 100%;
         padding-top: 180px;
+
+        @media all and (min-width: 720px) {
+          padding-top: 250px;
+        }
+
+        @media all and (min-width: 1020px) {
+          padding-top: 315px;
+          width: 100%;
+        }
 
         li {
           text-align: right;
@@ -78,6 +115,14 @@
         height: 11%;
         cursor: pointer;
 
+        @media all and (min-width: 720px) {
+          margin-top: 250px;
+        }
+
+        @media all and (min-width: 1020px) {
+          display: none;
+        }
+
         span {
           display: block;
           position: absolute;
@@ -89,6 +134,10 @@
           font-family: $font-primary;
           font-size: 0.8rem;
           color: $primary-main;
+
+          @media all and (min-width: 720px) {
+            top: 295px;
+          }
         }
       }
     }
@@ -100,6 +149,13 @@
     top: 0;
     left: 10%;
     padding: 20px 0;
+
+    @media all and (min-width: 1020px) {
+      width: 80%;
+      left: 20%;
+      padding: 60px 0;
+    }
+
     #about,
     #mission,
     #vision,
@@ -114,6 +170,11 @@
       font-weight: 700;
       margin-top: 3rem;
       margin-bottom: 1rem;
+
+      @media all and (min-width: 1020px) {
+        font-size: 1.8rem;
+        margin-top: 4rem;
+      }
     }
 
     .sub-heading {
@@ -122,6 +183,10 @@
       color: $primary-dark;
       font-weight: 700;
       margin-bottom: 1rem;
+
+      @media all and (min-width: 1020px) {
+        font-size: 1.5rem;
+      }
     }
 
     .parag {
@@ -131,6 +196,11 @@
       font-weight: 400;
       line-height: 22px;
       text-align: justify;
+
+      @media all and (min-width: 1020px) {
+        font-size: 1rem;
+        line-height: 28px;
+      }
     }
 
     .qoute {
@@ -141,6 +211,10 @@
       font-family: $font-primary;
       margin-bottom: 1rem;
 
+      @media all and (min-width: 1020px) {
+        font-size: 1.5rem;
+      }
+
       &::before,
       &::after {
         content: '"';
@@ -148,6 +222,10 @@
         font-weight: 700;
         vertical-align: middle;
         color: $primary-dark;
+
+        @media all and (min-width: 1020px) {
+          font-size: 4rem;
+        }
       }
 
       &::before {

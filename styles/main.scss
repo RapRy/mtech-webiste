@@ -6,6 +6,10 @@
   background-size: cover;
   padding: 10rem 20px 8rem;
 
+  @media all and (min-width: 720px) {
+    padding: 12rem 0 14rem;
+  }
+
   h1 {
     font-family: $font-primary;
     font-size: 2rem;
@@ -18,6 +22,15 @@
     top: 0;
     left: 50%;
     opacity: 0;
+
+    @media all and (min-width: 720px) {
+      text-align: right;
+      font-size: 3rem;
+    }
+
+    @media all and (min-width: 1020px) {
+      padding-right: 8rem;
+    }
   }
 
   p {
@@ -26,21 +39,50 @@
     line-height: 1.9;
     color: $secondary-light;
     margin-bottom: 2rem;
-    max-width: 700px;
+    max-width: 600px;
     float: right;
-    text-align: justify;
+    text-align: left;
     position: relative;
     top: 0;
     left: 50%;
     opacity: 0;
+
+    @media all and (min-width: 720px) {
+      padding-right: 2rem;
+      text-align: right;
+      font-size: 1rem;
+      line-height: 2.2rem;
+    }
+
+    @media all and (min-width: 1020px) {
+      padding-right: 8rem;
+      max-width: 800px;
+    }
   }
 
-  a {
-    @include pill-button(0.8rem 2rem, 0.85rem, $primary-main, 1rem);
-    position: relative;
-    top: 0;
-    left: 50%;
-    opacity: 0;
+  .hero-btn-container {
+    clear: both;
+
+    @media all and (min-width: 720px) {
+      text-align: right;
+      padding-right: 2rem;
+    }
+
+    @media all and (min-width: 1020px) {
+      padding-right: 8rem;
+    }
+
+    a {
+      @include pill-button(0.8rem 2rem, 0.85rem, $primary-main, 1rem);
+      position: relative;
+      top: 0;
+      left: 50%;
+      opacity: 0;
+
+      @media all and (min-width: 720px) {
+        @include pill-button(1rem 2.2rem, 0.85rem, $primary-main, 1rem);
+      }
+    }
   }
 }
 
@@ -50,6 +92,12 @@
     $secondary-main;
   background-size: 120%, contain;
   padding: 4rem 0;
+  overflow: hidden;
+
+  @media all and (min-width: 1020px) {
+    padding: 5rem 0;
+    background-size: 70%, contain;
+  }
 
   h3 {
     @include mobile-header($primary-main);
@@ -174,13 +222,26 @@
   background-size: cover;
   padding: 4rem 0;
 
+  @media all and (min-width: 1020px) {
+    padding: 5rem 0;
+  }
+
   h3 {
     @include mobile-header($secondary-light);
   }
 
-  .whoweare-intro-container {
+  .whoweare-grid-wrapper {
     margin-top: 3rem;
 
+    @media all and (min-width: 1020px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 6rem;
+    }
+  }
+
+  .whoweare-intro-container {
     p {
       font-family: $font-primary;
       font-size: 0.85rem;
@@ -193,6 +254,11 @@
       top: 0;
       left: 50%;
       opacity: 0;
+
+      @media all and (min-width: 1020px) {
+        font-size: 0.9rem;
+        margin-bottom: 3rem;
+      }
     }
 
     a {
@@ -215,12 +281,23 @@
     left: 50%;
     opacity: 0;
 
+    @media all and (min-width: 1020px) {
+      margin-left: 5rem;
+      margin-top: 0;
+      padding: 0.5rem 2rem;
+    }
+
     .whoweare-other {
       display: flex;
       flex-direction: row;
       gap: 1rem;
       border-bottom: 1px solid $secondary-dark;
       padding: 1rem 0;
+
+      @media all and (min-width: 1020px) {
+        padding: 2rem 0;
+        gap: 2rem;
+      }
 
       &:last-child {
         border-bottom: none;
@@ -229,6 +306,10 @@
       i {
         color: $primary-main;
         font-size: 2.5rem;
+
+        @media all and (min-width: 1020px) {
+          font-size: 3rem;
+        }
       }
 
       h4 {
@@ -237,6 +318,10 @@
         font-family: $font-primary;
         font-weight: 700;
         margin-bottom: 5px;
+
+        @media all and (min-width: 1020px) {
+          font-size: 1.2rem;
+        }
       }
 
       p {
@@ -246,6 +331,11 @@
         line-height: 20px;
         font-weight: 400;
         text-align: justify;
+
+        @media all and (min-width: 1020px) {
+          font-size: 0.9rem;
+          line-height: 25px;
+        }
       }
     }
   }
@@ -256,6 +346,7 @@
   background: url(../assets/meet-the-team-bg.jpg) no-repeat center top;
   background-size: cover;
   padding: 4rem 0;
+  overflow: hidden;
 
   h3 {
     @include mobile-header($secondary-light);
@@ -279,6 +370,11 @@
   #team-list {
     margin: 3rem 0 2rem;
     padding-left: 20px;
+
+    @media all and (min-width: 1020px) {
+      max-width: 900px;
+      margin: 3rem auto 2rem;
+    }
 
     .team-member {
       background-color: $secondary-light;
@@ -399,6 +495,10 @@
   background-color: $secondary-main;
   padding: 4rem 0;
 
+  @media all and (min-width: 1020px) {
+    padding: 5rem 0;
+  }
+
   h3 {
     @include mobile-header($primary-main);
   }
@@ -410,6 +510,11 @@
     gap: 2rem 1rem;
     align-items: center;
     justify-items: center;
+
+    @media all and (min-width: 1020px) {
+      margin: 5rem 0 0;
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     .partner-logo-container {
       position: relative;
@@ -445,6 +550,11 @@
   background-size: 120%, contain;
   padding: 0 0 4rem;
 
+  @media all and (min-width: 1020px) {
+    padding: 5rem 0;
+    background-size: 70%, contain;
+  }
+
   h3 {
     @include mobile-header($primary-dark);
     margin-bottom: 10px;
@@ -461,6 +571,13 @@
     top: 0;
     left: 50%;
     opacity: 0;
+
+    @media all and (min-width: 1020px) {
+      font-size: 0.9rem;
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
   }
 
   .form-container {
@@ -472,6 +589,26 @@
     top: 0;
     left: 50%;
     opacity: 0;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media all and (min-width: 1020px) {
+      margin: 4rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      .form-grid:nth-child(2) {
+        .input-container {
+          margin: 0;
+        }
+      }
+
+      .form-grid:nth-child(3) {
+        grid-column: 2 / 3;
+        text-align: right;
+      }
+    }
 
     .input-container {
       margin: 10px 0;
@@ -503,6 +640,10 @@
       textarea {
         min-height: 200px;
         resize: none;
+
+        @media all and (min-width: 1020px) {
+          min-height: 152px;
+        }
       }
 
       span {
@@ -519,6 +660,10 @@
     button {
       @include rectangle-button(0.8rem 2rem, 0.85rem, $primary-main);
       margin-top: 1rem;
+
+      @media all and (min-width: 1020px) {
+        margin-top: 0;
+      }
     }
   }
 }

@@ -48,7 +48,9 @@
           corporate clients' and MNOs Trusted Partners with Huawei and Technical
           Educators in SEA region.
         </p>
-        <a href="#">Find out more <i class="fas fa-arrow-right"></i></a>
+        <div class="hero-btn-container">
+          <a href="#">Find out more <i class="fas fa-arrow-right"></i></a>
+        </div>
       </section>
     </section>
     <section class="services-container">
@@ -83,21 +85,23 @@
     <section class="whoweare-container">
       <div class="inner-container whoweare">
         <h3>WHO WE ARE</h3>
-        <div class="whoweare-intro-container">
-          <p>
-            Located in Brunei, Mobitech Solutions incorporated in 2010 and has
-            diversified its’ businesses into several pillars: IT & Platform
-            Solutions, Consultancy & Technical Training and General Trading.
-            With innovative and cutting edge technology to accommodate the
-            industry ‘s requirements, we ensure that our partners/corporate
-            clients satisfy with our services offering. <br /><br />Connected
-            with more than 20 MNO’s in Thailand, Vietnam, Philippines, Malaysia,
-            Serbia, Kenya, Czech, Netherlands and etc. via Direct Carrier
-            Billing (DCB) and has more than 5000 Subscribers each MNO’s.
-          </p>
-          <a href="#">More about us <i class="fas fa-arrow-right"></i></a>
+        <div class="whoweare-grid-wrapper">
+          <div class="whoweare-intro-container">
+            <p>
+              Located in Brunei, Mobitech Solutions incorporated in 2010 and has
+              diversified its’ businesses into several pillars: IT & Platform
+              Solutions, Consultancy & Technical Training and General Trading.
+              With innovative and cutting edge technology to accommodate the
+              industry ‘s requirements, we ensure that our partners/corporate
+              clients satisfy with our services offering. <br /><br />Connected
+              with more than 20 MNO’s in Thailand, Vietnam, Philippines, Malaysia,
+              Serbia, Kenya, Czech, Netherlands and etc. via Direct Carrier
+              Billing (DCB) and has more than 5000 Subscribers each MNO’s.
+            </p>
+            <a href="#">More about us <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="whoweare-others-container"></div>
         </div>
-        <div class="whoweare-others-container"></div>
       </div>
     </section>
     <section class="team-container">
@@ -225,12 +229,13 @@
         </div>
         <div class="footer-grid">
           <h4>Quick Links</h4>
-          <a href="#" alt="about" class="quick-link">About</a>
-          <a href="#" alt="careers" class="quick-link">Careers</a>
-          <a href="#" alt="projects" class="quick-link">Projects</a>
-          <a href="#" alt="partners" class="quick-link">Partners</a>
-          <a href="#" alt="contact" class="quick-link">Contact</a>
-          <a href="#" alt="services" class="quick-link">Services</a>
+          <a href="about.php#about" alt="about" class="quick-link">About</a>
+          <a href="career.php" alt="careers" class="quick-link">Careers</a>
+          <a href="projects.php" alt="projects" class="quick-link">Projects</a>
+          <a href="partners.php" alt="partners" class="quick-link">Partners</a>
+          <a href="contact.php" alt="contact" class="quick-link">Contact</a>
+          <a href="services.php" alt="services" class="quick-link">Services</a>
+          <a href="about.php#teams" alt="teams" class="quick-link">Teams</a>
         </div>
       </div>
       <div class="inner-container">
