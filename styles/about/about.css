@@ -339,6 +339,7 @@ a {
     left: 200px;
     font-size: 6rem;
     bottom: -25px;
+    left: 270px;
   }
 }
 
@@ -364,6 +365,12 @@ a {
 }
 
 @media all and (min-width: 1020px) {
+  .main-about-container .side-quick-links-container {
+    left: -78%;
+  }
+}
+
+@media all and (min-width: 1280px) {
   .main-about-container .side-quick-links-container {
     left: -75%;
   }
@@ -477,8 +484,8 @@ a {
 
 @media all and (min-width: 1020px) {
   .main-about-container .main-about {
-    width: 80%;
-    left: 20%;
+    width: 75%;
+    left: 25%;
     padding: 60px 0;
   }
 }
@@ -591,6 +598,79 @@ a {
   padding: 0 20px;
 }
 
+@media all and (min-width: 1020px) {
+  .main-about-container .main-about #teams .glide-management,
+  .main-about-container .main-about #teams .glide-marketing,
+  .main-about-container .main-about #teams .glide-technical {
+    display: none;
+  }
+}
+
+.main-about-container .main-about #teams .glide-marketing-desktop,
+.main-about-container .main-about #teams .glide-technical-desktop {
+  display: none;
+  margin: 3rem 0 2rem;
+}
+
+@media all and (min-width: 1020px) {
+  .main-about-container .main-about #teams .glide-marketing-desktop,
+  .main-about-container .main-about #teams .glide-technical-desktop {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+.main-about-container .main-about #teams .glide-management-desktop {
+  display: none;
+  margin: 3rem 0 2rem;
+}
+
+@media all and (min-width: 1020px) {
+  .main-about-container .main-about #teams .glide-management-desktop {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .main-about-container .main-about #teams .glide-management-desktop .team-member:nth-child(1) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+  }
+  .main-about-container .main-about #teams .glide-management-desktop .team-member:nth-child(2) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  .main-about-container .main-about #teams .glide-management-desktop .team-member:nth-child(3) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  .main-about-container .main-about #teams .glide-management-desktop .team-member:nth-child(4) {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+}
+
 .main-about-container .main-about #teams #management-list,
 .main-about-container .main-about #teams #marketing-list,
 .main-about-container .main-about #teams #technical-list {
@@ -598,9 +678,7 @@ a {
   padding-left: 20px;
 }
 
-.main-about-container .main-about #teams #management-list .team-member,
-.main-about-container .main-about #teams #marketing-list .team-member,
-.main-about-container .main-about #teams #technical-list .team-member {
+.main-about-container .main-about #teams .team-member {
   background-color: #ffffff;
   border-radius: 1rem;
   height: 460px;
@@ -608,18 +686,14 @@ a {
   position: relative;
 }
 
-.main-about-container .main-about #teams #management-list .team-member .team-photo-container,
-.main-about-container .main-about #teams #marketing-list .team-member .team-photo-container,
-.main-about-container .main-about #teams #technical-list .team-member .team-photo-container {
+.main-about-container .main-about #teams .team-member .team-photo-container {
   position: relative;
   background-color: #a7a8ac;
   height: 120px;
   margin-bottom: 5rem;
 }
 
-.main-about-container .main-about #teams #management-list .team-member .team-photo-container img,
-.main-about-container .main-about #teams #marketing-list .team-member .team-photo-container img,
-.main-about-container .main-about #teams #technical-list .team-member .team-photo-container img {
+.main-about-container .main-about #teams .team-member .team-photo-container img {
   width: 140px;
   height: 140px;
   outline: #ffffff solid 7px;
@@ -631,9 +705,7 @@ a {
           transform: translateX(-50%);
 }
 
-.main-about-container .main-about #teams #management-list .team-member h4,
-.main-about-container .main-about #teams #marketing-list .team-member h4,
-.main-about-container .main-about #teams #technical-list .team-member h4 {
+.main-about-container .main-about #teams .team-member h4 {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   color: #000000;
@@ -642,9 +714,7 @@ a {
   text-align: center;
 }
 
-.main-about-container .main-about #teams #management-list .team-member .pos,
-.main-about-container .main-about #teams #marketing-list .team-member .pos,
-.main-about-container .main-about #teams #technical-list .team-member .pos {
+.main-about-container .main-about #teams .team-member .pos {
   font-family: "Raleway", sans-serif;
   font-size: 0.9rem;
   color: #b41b21;
@@ -655,9 +725,7 @@ a {
   white-space: normal;
 }
 
-.main-about-container .main-about #teams #management-list .team-member .role-desc,
-.main-about-container .main-about #teams #marketing-list .team-member .role-desc,
-.main-about-container .main-about #teams #technical-list .team-member .role-desc {
+.main-about-container .main-about #teams .team-member .role-desc {
   font-family: "Raleway", sans-serif;
   font-size: 0.8rem;
   color: #000000;

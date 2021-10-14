@@ -500,12 +500,34 @@ a {
   }
 }
 
+@media all and (min-width: 1020px) {
+  .services-container .glide-service {
+    display: none;
+  }
+}
+
+.services-container .service-list-desktop {
+  display: none;
+}
+
+@media all and (min-width: 1020px) {
+  .services-container .service-list-desktop {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1170px;
+    margin: 3rem auto 2rem;
+  }
+}
+
 .services-container #services-list {
   margin: 3rem 0 2rem;
   padding-left: 20px;
 }
 
-.services-container #services-list .service-card {
+.services-container .service-card {
   border-radius: 1rem;
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.13);
@@ -521,19 +543,31 @@ a {
   opacity: 0;
 }
 
-.services-container #services-list .service-card i {
+@media all and (min-width: 1020px) {
+  .services-container .service-card {
+    height: 350px;
+  }
+}
+
+.services-container .service-card i {
   font-size: 6rem;
   color: #b41b21;
   margin: 2rem auto;
 }
 
-.services-container #services-list .service-card .service-card-details {
+@media all and (min-width: 1020px) {
+  .services-container .service-card i {
+    font-size: 4rem;
+  }
+}
+
+.services-container .service-card .service-card-details {
   background-color: #f5f5f5;
   padding: 1.5rem 1.5rem 2rem;
   height: 100%;
 }
 
-.services-container #services-list .service-card .service-card-details h4 {
+.services-container .service-card .service-card-details h4 {
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
@@ -541,7 +575,7 @@ a {
   margin-bottom: 10px;
 }
 
-.services-container #services-list .service-card .service-card-details p {
+.services-container .service-card .service-card-details p {
   white-space: normal;
   text-align: justify;
   font-family: "Raleway", sans-serif;
@@ -881,6 +915,22 @@ a {
   opacity: 0;
 }
 
+@media all and (min-width: 1020px) {
+  .team-container > p {
+    max-width: 750px;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1020px) {
+  .team-container .glide-team {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+}
+
 .team-container #team-list {
   margin: 3rem 0 2rem;
   padding-left: 20px;
@@ -888,8 +938,8 @@ a {
 
 @media all and (min-width: 1020px) {
   .team-container #team-list {
-    max-width: 900px;
     margin: 3rem auto 2rem;
+    padding-left: 0px;
   }
 }
 

@@ -178,31 +178,25 @@ $(() => {
           icon: "fa-chalkboard-teacher",
         },
       ];
-      this.perView = 1;
     }
 
     lpLoadEvents = () => {
-      if ($(window).width() > 780) {
-        this.perView = 2;
-      } else if ($(window).width() > 1020) {
-        console.log($(window));
-        if ($(".glide-service").length === 1) {
-          const serviceList = $("#services-list")
-            .removeClass("glide__slides")
-            .css({ width: "100%" })
-            .clone(true);
-          $(".glide-service").remove();
-          $(".services-container").append(serviceList);
-          $(".service-card").removeClass("glide__slide");
-        }
-      }
-
       if (window.location.href.includes("about.php")) {
         return;
       } else {
         this.servicesData.forEach((service, i) => {
           $("#services-list").append(`
             <div class="service-card glide__slide">
+              <i class="fas ${service.icon}"></i>
+              <div class="service-card-details">
+                <h4>${service.title}</h4>
+                <p>${service.description}</p>
+              </div>
+            </div>
+          `);
+
+          $(".service-list-desktop").append(`
+            <div class="service-card">
               <i class="fas ${service.icon}"></i>
               <div class="service-card-details">
                 <h4>${service.title}</h4>
@@ -221,25 +215,14 @@ $(() => {
           gap: 20,
           animationDuration: 300,
           rewind: false,
-          perView: this.perView,
+          perView: 1,
+          breakpoints: {
+            1020: {
+              perView: 2,
+            },
+          },
         }).mount();
       }
-    };
-
-    lpResizeEvents = () => {
-      $(window).on("resize", () => {
-        if ($(window).width() > 1020) {
-          if ($(".glide-service").length === 1) {
-            const serviceList = $("#services-list")
-              .removeClass("glide__slides")
-              .css({ width: "100%" })
-              .clone(true);
-            $(".glide-service").remove();
-            $(".services-container").append(serviceList);
-            $(".service-card").removeClass("glide__slide");
-          }
-        }
-      });
     };
   }
 
@@ -407,16 +390,9 @@ $(() => {
           description: `Maecenas sed egestas velit. Duis sodales tincidunt felis, nec porta nibh posuere vehicula.`,
         },
       ];
-      this.perView = 1;
     }
 
     lpLoadEvents = () => {
-      if ($(window).width() > 780) {
-        this.perView = 2;
-      } else if ($(window).width() > 1020) {
-        this.perView = 3;
-      }
-
       this.lpData.forEach((data) => {
         $(".whoweare-others-container").append(`
               <div class="whoweare-other">
@@ -445,23 +421,23 @@ $(() => {
           `);
       });
 
-      if ($(window).width() > 1020) {
-        new Glide(".glide-team", {
-          peek: { before: 0, after: 0 },
-          gap: 20,
-          animationDuration: 300,
-          rewind: false,
-          perView: 3,
-        }).mount();
-      } else {
-        new Glide(".glide-team", {
-          peek: { before: 0, after: 60 },
-          gap: 20,
-          animationDuration: 300,
-          rewind: false,
-          perView: this.perView,
-        }).mount();
-      }
+      new Glide(".glide-team", {
+        gap: 20,
+        animationDuration: 300,
+        rewind: false,
+        startAt: 0,
+        perView: 3,
+        breakpoints: {
+          1020: {
+            peek: { before: 0, after: 60 },
+            perView: 2,
+          },
+          720: {
+            peek: { before: 0, after: 60 },
+            perView: 1,
+          },
+        },
+      }).mount();
     };
 
     loadManagement = () => {
@@ -475,6 +451,17 @@ $(() => {
             <p class="pos">${data.position}</p>
             <p class="role-desc">${data.description}</p>
           </div>
+        `);
+
+        $(".glide-management-desktop").append(`
+            <div class="team-member">
+              <div class="team-photo-container">
+                <img src="${data.avatar}" alt="${data.name}" />
+              </div>
+              <h4>${data.name}</h4>
+              <p class="pos">${data.position}</p>
+              <p class="role-desc">${data.description}</p>
+            </div>
         `);
 
         $("#management-bullets").append(`
@@ -503,6 +490,17 @@ $(() => {
           </div>
         `);
 
+        $(".glide-marketing-desktop").append(`
+          <div class="team-member glide__slide">
+            <div class="team-photo-container">
+              <img src="${data.avatar}" alt="${data.name}" />
+            </div>
+            <h4>${data.name}</h4>
+            <p class="pos">${data.position}</p>
+            <p class="role-desc">${data.description}</p>
+          </div>
+        `);
+
         $("#marketing-bullets").append(`
         <button class="glide__bullet marketing-bullet" data-glide-dir="=${i}"></button>
         `);
@@ -519,6 +517,17 @@ $(() => {
     loadTechnical = () => {
       this.technicalTeam.forEach((data, i) => {
         $("#technical-list").append(`
+          <div class="team-member glide__slide">
+            <div class="team-photo-container">
+              <img src="${data.avatar}" alt="${data.name}" />
+            </div>
+            <h4>${data.name}</h4>
+            <p class="pos">${data.position}</p>
+            <p class="role-desc">${data.description}</p>
+          </div>
+        `);
+
+        $(".glide-technical-desktop").append(`
           <div class="team-member glide__slide">
             <div class="team-photo-container">
               <img src="${data.avatar}" alt="${data.name}" />
@@ -799,7 +808,6 @@ $(() => {
   }
 
   services.lpLoadEvents();
-  // services.lpResizeEvents();
 
   if (window.location.href.includes("about.php")) {
     about.loadManagement();

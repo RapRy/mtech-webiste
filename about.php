@@ -105,8 +105,9 @@
                                     id="management-bullets"
                                     data-glide-el="controls[nav]"
                                 ></div>
-                                </div>
                             </div>
+                        </div>
+                        <div class="glide-management-desktop"></div>
                     </div>
                     <div class="marketing">
                         <h5 class="sub-heading">Marketing Team</h5>
@@ -134,8 +135,9 @@
                                     id="marketing-bullets"
                                     data-glide-el="controls[nav]"
                                 ></div>
-                                </div>
                             </div>
+                        </div>
+                        <div class="glide-marketing-desktop"></div>
                     </div>
                     <div class="technical">
                         <h5 class="sub-heading">Technical Team</h5>
@@ -164,8 +166,9 @@
                                     id="technical-bullets"
                                     data-glide-el="controls[nav]"
                                 ></div>
-                                </div>
                             </div>
+                        </div>
+                        <div class="glide-technical-desktop"></div>
                     </div>
                 </div>
             </div>
